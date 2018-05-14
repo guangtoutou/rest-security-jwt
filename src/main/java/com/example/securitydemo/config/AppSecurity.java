@@ -66,6 +66,7 @@ public class AppSecurity extends WebSecurityConfigurerAdapter{
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
 				.authorizeRequests()
+				.antMatchers("/signup").permitAll()
 				.anyRequest().authenticated()
 				.and()
 				.formLogin()
